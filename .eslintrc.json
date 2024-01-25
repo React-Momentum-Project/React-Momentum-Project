@@ -12,7 +12,7 @@
     "createDefaultProgram": true
   },
   "plugins": ["unused-imports", "simple-import-sort"],
-  "extends": ["plugin:prettier/recommended"],
+  "extends": ["prettier", "plugin:prettier/recommended"],
   "settings": {
     "react": {
       "version": "detect"
