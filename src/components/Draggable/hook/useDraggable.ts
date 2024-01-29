@@ -1,8 +1,8 @@
 import {
+  MouseEvent as ReactMouseEvent,
   useCallback,
   useEffect,
   useState,
-  MouseEvent as ReactMouseEvent,
 } from 'react';
 
 interface Position {
@@ -19,15 +19,18 @@ export const useDraggable = (initPos: Position) => {
     setIsDragging(true);
     const rect = e.currentTarget.getBoundingClientRect();
     const [clientX, clientY] = [e.clientX, e.clientY];
-    setGrabCursorPos({ x: rect.width - clientX, y: rect.height - clientY });
+    setGrabCursorPos({ x: clientX - rect.x, y: clientY - rect.y });
+    console.log(rect);
   }, []);
 
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
       if (!isDragging) return;
-      setPos({
-        x: e.clientX - grabCursorPos.x,
-        y: e.clientY - grabCursorPos.y,
+      requestAnimationFrame(() => {
+        setPos({
+          x: e.clientX - grabCursorPos.x,
+          y: e.clientY - grabCursorPos.y,
+        });
       });
     },
     [isDragging],

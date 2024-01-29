@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import { useDraggable } from './hook/useDraggable';
 
-const DraggableDiv = styled.div<{ x: number; y: number }>`
+const DraggableDiv = styled.div.attrs<{ x: number; y: number }>(({ x, y }) => ({
+  style: { left: `${x}px`, top: `${y}px` },
+}))`
   position: absolute;
   display: inline-block;
   cursor: grab;
-  left: ${({ x }) => x}px;
-  top: ${({ y }) => y}px;
 
   &:active {
     cursor: grabbing;
