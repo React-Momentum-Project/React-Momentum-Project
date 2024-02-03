@@ -151,13 +151,9 @@ export const FoldContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 60px;
+  height: 3.4rem;
 
-  span {
-    text-align: center;
-    color: transparent;
-    font-size: 3rem;
-    background: linear-gradient(white, gray);
-    background-clip: text;
+  &:nth-child(3n + 2) {
+    margin-left: 2px;
   }
 `;
