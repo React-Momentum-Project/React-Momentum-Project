@@ -90,7 +90,7 @@ export const FoldBottom = styled.div<{ $incomingValue: string }>`
   }
 `;
 
-export const CurrentFold = styled.div<{ $incomingValue: string }>`
+export const NextFold = styled.div<{ $incomingValue: string }>`
   position: absolute;
   z-index: 1;
   left: 0;

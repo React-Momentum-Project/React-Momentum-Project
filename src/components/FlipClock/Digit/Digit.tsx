@@ -1,10 +1,10 @@
 import { memo, useEffect, useRef, useState } from 'react';
 
 import {
-  CurrentFold,
   FoldBottom,
   FoldContainer,
   FoldTop,
+  NextFold,
   PrevFold,
 } from './style';
 
@@ -29,7 +29,7 @@ const Digit = memo(({ incomingValue, binary }: DigitProps) => {
     <FoldContainer>
       <FoldTop $outgoingValue={outgoingValue} />
       <FoldBottom $incomingValue={incomingValue} />
-      <CurrentFold $incomingValue={incomingValue} />
+      <NextFold $incomingValue={incomingValue} />
       <PrevFold $outgoingValue={outgoingValue} />
     </FoldContainer>
   );
