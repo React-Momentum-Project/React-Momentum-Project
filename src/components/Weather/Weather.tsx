@@ -1,5 +1,5 @@
 import useFetchWeather from './hooks/useFetchWeather';
-import { StWeatherContainer, StWeatherLayout } from './Weather.styles';
+import * as S from './Weather.styles';
 
 interface I_weatherList {
   [key: string]: string;
@@ -28,14 +28,14 @@ const Weather = () => {
   const currentWeather = weatherList[weatherByGeolocation];
 
   return (
-    <StWeatherLayout $weather={weatherByGeolocation}>
-      <StWeatherContainer>
+    <S.WeatherLayout $weather={weatherByGeolocation}>
+      <S.WeatherContainer>
         <div>현재 날씨 : {currentWeather}</div>
         <div>위치 : {myGeolocation}</div>
         <div>기온 : {myTemperature}℃</div>
         <div>날씨 상세 정보 : {myWeatherDescription}</div>
-      </StWeatherContainer>
-    </StWeatherLayout>
+      </S.WeatherContainer>
+    </S.WeatherLayout>
   );
 };
 

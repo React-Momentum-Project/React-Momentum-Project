@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StWeatherLayout = styled.div<{ $weather: string }>`
+export const WeatherLayout = styled.div<{ $weather: string }>`
   background: ${({ $weather }) =>
     `url(/src/assets/${$weather}.jpeg), no-repeat`};
   background-size: cover;
@@ -17,7 +17,7 @@ export const StWeatherLayout = styled.div<{ $weather: string }>`
   align-items: center;
 `;
 
-export const StWeatherContainer = styled.div`
+export const WeatherContainer = styled.div`
   color: black;
   position: absolute;
   background-color: white;
