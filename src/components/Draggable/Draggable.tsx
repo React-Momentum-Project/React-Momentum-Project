@@ -1,19 +1,7 @@
 import { ReactNode } from 'react';
-import styled from 'styled-components';
 
+import * as S from './Draggable.styles';
 import { useDraggable } from './hook/useDraggable';
-
-const DraggableDiv = styled.div.attrs<{ x: number; y: number }>(({ x, y }) => ({
-  style: { left: `${x}px`, top: `${y}px` },
-}))`
-  position: absolute;
-  display: inline-block;
-  cursor: grab;
-
-  &:active {
-    cursor: grabbing;
-  }
-`;
 
 interface DraggableProps {
   children: ReactNode;
@@ -24,13 +12,13 @@ const Draggable = ({ children, initPos }: DraggableProps) => {
   const { pos, handleMouseDown } = useDraggable(initPos);
 
   return (
-    <DraggableDiv
+    <S.DraggableDiv
       x={pos.x}
       y={pos.y}
       onMouseDown={handleMouseDown}
     >
       {children}
-    </DraggableDiv>
+    </S.DraggableDiv>
   );
 };
 
