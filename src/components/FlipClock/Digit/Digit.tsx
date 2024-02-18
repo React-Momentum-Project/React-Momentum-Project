@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef, useState } from 'react';
 
-import * as S from './style';
+import * as S from './Digit.styles';
 
 interface DigitProps {
   incomingValue: string;

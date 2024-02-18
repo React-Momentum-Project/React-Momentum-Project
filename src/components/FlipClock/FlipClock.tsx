@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import Digit from './Digit/Digit';
-import * as S from './style';
+import * as S from './FlipClock.styles';
 
 const FlipClock = () => {
   const [tensHour, setTensHour] = useState('0');
