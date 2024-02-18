@@ -19,6 +19,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
   },
   "include": ["src", "**/*.ts", "**/*.tsx", "vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
