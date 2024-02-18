@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const API_KEY = 'bc9af38a81220aca0ddd91e15d708947';
-let ignore = false;
+let init = false;
 
 const useFetchWeather = () => {
   const [weatherByGeolocation, setWeatherByGeolocation] = useState('');
@@ -32,11 +32,11 @@ const useFetchWeather = () => {
   };
 
   useEffect(() => {
-    if (!ignore) {
+    if (!init) {
       navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
     }
     return () => {
-      ignore = true;
+      init = true;
     };
   }, []);
 

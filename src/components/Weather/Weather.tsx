@@ -32,7 +32,7 @@ const Weather = () => {
       <StWeatherContainer>
         <div>현재 날씨 : {currentWeather}</div>
         <div>위치 : {myGeolocation}</div>
-        <div>기온 : {myTemperature}</div>
+        <div>기온 : {myTemperature}℃</div>
         <div>날씨 상세 정보 : {myWeatherDescription}</div>
       </StWeatherContainer>
     </StWeatherLayout>
