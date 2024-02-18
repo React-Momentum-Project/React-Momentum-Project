@@ -1,12 +1,6 @@
 import { memo, useEffect, useRef, useState } from 'react';
 
-import {
-  FoldBottom,
-  FoldContainer,
-  FoldTop,
-  NextFold,
-  PrevFold,
-} from './style';
+import * as S from './style';
 
 interface DigitProps {
   incomingValue: string;
@@ -26,12 +20,12 @@ const Digit = memo(({ incomingValue, binary }: DigitProps) => {
   }, []);
 
   return (
-    <FoldContainer>
-      <FoldTop $outgoingValue={outgoingValue} />
-      <FoldBottom $incomingValue={incomingValue} />
-      <NextFold $incomingValue={incomingValue} />
-      <PrevFold $outgoingValue={outgoingValue} />
-    </FoldContainer>
+    <S.FoldContainer>
+      <S.FoldTop $outgoingValue={outgoingValue} />
+      <S.FoldBottom $incomingValue={incomingValue} />
+      <S.NextFold $incomingValue={incomingValue} />
+      <S.PrevFold $outgoingValue={outgoingValue} />
+    </S.FoldContainer>
   );
 });
 

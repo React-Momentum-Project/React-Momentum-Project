@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import Digit from './Digit/Digit';
-import { Colon, Container } from './style';
+import * as S from './style';
 
 const FlipClock = () => {
   const [tensHour, setTensHour] = useState('0');
@@ -45,7 +45,7 @@ const FlipClock = () => {
   }, [setTime]);
 
   return (
-    <Container>
+    <S.Container>
       <Digit
         key={`tens hour ${tensHour}`}
         binary={2}
@@ -56,7 +56,7 @@ const FlipClock = () => {
         binary={10}
         incomingValue={unitsHour}
       />
-      <Colon>:</Colon>
+      <S.Colon>:</S.Colon>
       <Digit
         key={`tens minute ${tensMinute}`}
         binary={6}
@@ -67,7 +67,7 @@ const FlipClock = () => {
         binary={10}
         incomingValue={unitsMinute}
       />
-      <Colon>:</Colon>
+      <S.Colon>:</S.Colon>
       <Digit
         key={`tens second ${tensSecond}`}
         binary={6}
@@ -78,7 +78,7 @@ const FlipClock = () => {
         binary={10}
         incomingValue={unitsSecond}
       />
-    </Container>
+    </S.Container>
   );
 };
 
