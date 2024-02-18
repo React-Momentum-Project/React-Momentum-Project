@@ -20,7 +20,6 @@ export const useDraggable = (initPos: Position) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const [clientX, clientY] = [e.clientX, e.clientY];
     setGrabCursorPos({ x: clientX - rect.x, y: clientY - rect.y });
-    console.log(rect);
   }, []);
 
   const handleMouseMove = useCallback(
